@@ -13,12 +13,9 @@ AsianOption::AsianOption(PayOff* _pay_off)
 }
 
 // Arithmetic
-AsianOptionArithmetic::AsianOptionArithmetic(PayOff* _pay_off)
-{
-	pay_off = _pay_off;
-}
+AsianOptionArithmetic::AsianOptionArithmetic(PayOff* _pay_off): AsianOption(_pay_off) {}
 
-double AsianOptionArithmetic::pay_off_price(const std::vector& spot_prices) const
+double AsianOptionArithmetic::pay_off_price(const std::vector<double>& spot_prices) const
 {
 	unsigned num_times = spot_prices.size();
 	double sum = std::accumulate(spot_prices.begin(), spot_prices.end(),0);
@@ -27,12 +24,9 @@ double AsianOptionArithmetic::pay_off_price(const std::vector& spot_prices) cons
 }
 
 // Geometric
-AsianOptionGeometric::AsianOptionGeometric(PayOff* _pay_off)
-{
-	pay_off = _pay_off;
-}
+AsianOptionGeometric::AsianOptionGeometric(PayOff* _pay_off): AsianOption(_pay_off) {}
 
-double AsianOptionGeometric::pay_off_price(const std::vector& spot_prices) const
+double AsianOptionGeometric::pay_off_price(const std::vector<double>& spot_prices) const
 {
 	unsigned num_times = spot_prices.size();
 	double log_sum = 0.0;

@@ -20,7 +20,7 @@ class AsianOptionArithmetic: public AsianOption{
 		AsianOptionArithmetic(PayOff* _pay_off);
 		virtual ~AsianOptionArithmetic() {};
 
-		virtual double pay_off_price(const std::vector<double>& spot_prices) const= 0;
+		virtual double pay_off_price(const std::vector<double>& spot_prices) const;
 };
 
 class AsianOptionGeometric: public AsianOption{
@@ -28,7 +28,7 @@ class AsianOptionGeometric: public AsianOption{
 		AsianOptionGeometric(PayOff* _pay_off);
 		virtual ~AsianOptionGeometric() {};
 
-		virtual double pay_off_price(const std::vector<double>& spot_prices) const= 0;
+		virtual double pay_off_price(const std::vector<double>& spot_prices) const;
 };
 
 
